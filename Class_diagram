@@ -1,0 +1,43 @@
+@startuml
+class Engine {
+on()
+off()
+}
+
+class Camera {
+get_cleaner(*cl_x, *cl_y)
+get_dirt(*d_x, *d_y, *up_or_dw)
+}
+
+class Place {
+move(cl_x, cl_y, d_x, d_y)
+}
+
+class Hand {
+void up()
+void down()
+}
+
+class Spray {
+void on()
+void off()
+}
+
+class System {
+cl_x, cl_y : int
+d_x, d_y : int
+up_or_dw : bool
+start_robot()
+set_coord()
+void set_hand()
+do_spray()
+stop_robot()
+}
+
+System o--Engine: has
+System o--Camera: has
+System o--Place: has
+System o--Hand: has
+System o--Spray: has
+
+@enduml
