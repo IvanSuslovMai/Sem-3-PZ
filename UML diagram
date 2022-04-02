@@ -1,0 +1,11 @@
+@startuml
+
+OFF--> ON : turn ON
+ON -> [*] : turn OFF
+ON --> Camera
+Camera -> Move : dirt != 0
+Move --> Clean : x_dirt == x_cleaner && y_dirt == y_cleaner
+Clean --> Camera : dirt == 0
+Camera --> [*] : dirt = 0
+
+@enduml
